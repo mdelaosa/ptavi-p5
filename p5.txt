@@ -128,7 +128,7 @@ dirección SIP?
 	No, ya que hay un error 407.
 * ¿En qué se diferencia el segundo INVITE más abajo del primero?
 ¿A qué crees que se debe esto?
-	El tamaño es mayor, porque contiene el campo de autenticación del proxy, que el primero no tenía y por eso recibía como respuesta un 407 y no un 200 OK.
+	El tamaño es mayor, porque contiene el campo de identificación del proxy, que el primero no tenía y por eso recibía como respuesta un 407 y no un 200 OK.
 	
 
 11. Una vez conectado, estudia el intercambio de tramas.
