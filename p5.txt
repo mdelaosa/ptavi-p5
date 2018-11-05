@@ -143,6 +143,7 @@ captura es en destino)?
 	RTP tiene una periodicidad de 0.02s aprox.
 * ¿Cuántos bits/segundo se envı́an?
 	8000 bytes/s, que es 64Kbps.
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
