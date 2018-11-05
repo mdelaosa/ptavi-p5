@@ -44,20 +44,27 @@ de una aplicación que transmite en tiempo real?
 * ¿Qué otros protocolos podemos ver en la jerarquı́a de protocolos?
 ¿Cuales crees que son señal y cuales ruido?
 	DNS, TCP, HTTP, SIP, RTP, RTCP, ARP, ICMP, UDP, STUN.
+Son señal: RTP, UDP, SIP.
+Son ruido: ARP, TCP, 
 
 4. Observa por encima el flujo de tramas en el menú de Statistics en IO
 Graphs. La captura que estamos viendo incluye desde la inicialización
 (registro) de la aplicación hasta su finalización, con una llamada entremedias.
 * Filtra por sip para conocer cuándo se envı́an paquetes SIP. ¿En
 qué segundos tienen lugar esos envı́os?
+	En los segundos 7, 14, 16, 38, 55.
 * Y los paquetes con RTP, ¿cuándo se envı́an?
+	Durante los segundos comprendidos entre el 17 y el 38.
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 5. Analiza las dos primeras tramas de la captura.
 * ¿Qué servicio es el utilizado en estas tramas?
+	Son paquetes DNS.
 * ¿Cuál es la dirección IP del servidor de nombres del ordenador
 que ha lanzado Ekiga?
+	80.58.61.250
 * ¿Qué dirección IP (de ekiga.net) devuelve el servicio de nombres?
+	86.58.61.250
 
 6. A continuación, hay más de una docena de tramas TCP/HTTP.
 * ¿Podrı́as decir la URL que se está pidiendo?
