@@ -91,10 +91,15 @@ un servidor Registrar. El Registrar guarda información sobre los
 usuarios en un servidor de localización que puede ser utilizado para
 localizar usuarios.
 * ¿Qué dirección IP tiene el servidor Registrar?
+	86.64.162.35
 * ¿A qué puerto (del servidor Registrar) se envı́an los paquetes
 SIP?
+	5060
 * ¿Qué método SIP utiliza el UA para registrarse?
+	REGISTER.
 * Además de REGISTER, ¿podrı́as decir qué instrucciones SIP entiende el UA?
+	INVITE, ACK, OPTIONS,BYE, CANCEL, NOTIFY, REFER, MESSAGE.
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 9. Fijémonos en las tramas siguientes a la número 46:
