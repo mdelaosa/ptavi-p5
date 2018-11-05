@@ -68,16 +68,22 @@ que ha lanzado Ekiga?
 
 6. A continuación, hay más de una docena de tramas TCP/HTTP.
 * ¿Podrı́as decir la URL que se está pidiendo?
+	ekiga.net/ip
 * ¿Qué user agent (UA) la está pidiendo?
+	192.168.1.34
 * ¿Qué devuelve el servidor?
+	200 OK
 * Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y
 vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo
 que está respondiendo el servidor?
+	Responde una dirección IP pública, por la cual el servidor ve al cliente.
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del
 protocolo STUN.
 * ¿Por qué se hace uso de este protocolo?
+	Porque STUN se utiliza para encontrar la IP pública de un cliente privado a través de NAT.
 * ¿Podrı́as decir si estamos tras un NAT o no?
+	Si, ya que usa el protocolo STUN.
 
 8. La trama 46 es la primera trama SIP. En un entorno como el de Internet, lo habitual es desconocer la dirección IP de la otra parte al
 realizar una llamada. Por eso, todo usuario registra su localización en
