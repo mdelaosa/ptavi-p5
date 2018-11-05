@@ -149,12 +149,16 @@ captura es en destino)?
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
 opción RTP. Empecemos mirando los flujos RTP.
 * ¿Cuántos flujos hay? ¿por qué?
+	Uno de audio y uno de vídeo.
 * ¿Cuántos paquetes se pierden?
+	Ninguno, ya que el campo Lost tiene 0.0%
 * ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el
 valor de delta?
+	El valor de delta corresponde al tiempo que tarda en llegar un paquete, los valores son 1290.44 y 1290.48.
 * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué
 quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
+	
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
