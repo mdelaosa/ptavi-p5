@@ -194,10 +194,11 @@ esa llamada y pulsa el botón Graph.
 * ¿En qué trama(s)?
 	En las tramas 924, 925, 927 y 933.
 * ¿Por qué crees que se envı́a varias veces?
-	Porque
+	Porque estamos en UDP, que al ser un protocolo no fiable, es necesario que los mensajes se manden varias veces para asegurarse que ha llegado.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+	
 * ¿En qué trama sucede esto?
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
