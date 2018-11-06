@@ -198,9 +198,12 @@ esa llamada y pulsa el botón Graph.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
-	
+	Porque para cerrar sesión, se envía el campo Expires 0.
 * ¿En qué trama sucede esto?
+	950
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
+	En lo nombrado anteriormente, el campo Expires pasa a valer 0 en vez de 3600s.
+	
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 Captura de una sesión SIP
