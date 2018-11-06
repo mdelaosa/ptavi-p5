@@ -34,13 +34,19 @@ cuestiones:
 	Tiene una duración de 56.149345 segundos.
 * ¿Qué IP tiene la máquina donde se ha efectuado la captura? ¿Se
 trata de una IP pública o de una IP privada? ¿Por qué lo sabes?
-	Se captura en la IP 192.168.1.34 y se trata de una IP privada, puesto que se encuentra dentro del rango de IP privadas.
+	Se captura en la IP 192.168.1.34 y se trata de una IP privada,
+puesto que se encuentra dentro del rango de IP privadas.
 
-3. Antes de analizar las tramas, mira las estadı́sticas generales que aparecen en el menú de Statistics. En el apartado de jerarquı́a de protocolos (Protocol Hierarchy) se puede ver el porcentaje del tráfico
+3. Antes de analizar las tramas, mira las estadı́sticas generales que
+aparecen en el menú de Statistics. En el apartado de jerarquı́a de
+protocolos (Protocol Hierarchy) se puede ver el porcentaje del tráfico
 correspondiente al protocolo TCP y UDP.
 * ¿Cuál de los dos es mayor? ¿Tiene esto sentido si estamos hablando
 de una aplicación que transmite en tiempo real?
-	UDP es mayor, tiene un 96.2%, frente a un 2.1% de TCP. Tiene sentido, puesto que TCP requiere establecimiento previo, asentimientos y control de flujo constante, por lo que al hablar de una conexión en tiempo real, es mejor UDP.
+	UDP es mayor, tiene un 96.2%, frente a un 2.1% de TCP. Tiene
+sentido, puesto que TCP requiere establecimiento previo, asentimientos
+y control de flujo constante, por lo que al hablar de una conexión en
+tiempo real, es mejor UDP.
 * ¿Qué otros protocolos podemos ver en la jerarquı́a de protocolos?
 ¿Cuales crees que son señal y cuales ruido?
 	DNS, TCP, HTTP, SIP, RTP, RTCP, ARP, ICMP, UDP, STUN.
@@ -55,6 +61,7 @@ qué segundos tienen lugar esos envı́os?
 	En los segundos 7, 14, 16, 38, 55.
 * Y los paquetes con RTP, ¿cuándo se envı́an?
 	Durante los segundos comprendidos entre el 17 y el 38.
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 5. Analiza las dos primeras tramas de la captura.
@@ -76,16 +83,19 @@ que ha lanzado Ekiga?
 * Si lanzamos el navegador web, por ejemplo, Mozilla Firefox, y
 vamos a la misma URL, ¿qué recibimos? ¿Qué es, entonces, lo
 que está respondiendo el servidor?
-	Responde una dirección IP pública, por la cual el servidor ve al cliente.
+	Responde una dirección IP pública, por la cual el servidor
+ve al cliente.
 
 7. Hasta la trama 45 se puede observar una secuencia de tramas del
 protocolo STUN.
 * ¿Por qué se hace uso de este protocolo?
-	Porque STUN se utiliza para encontrar la IP pública de un cliente privado a través de NAT.
+	Porque STUN se utiliza para encontrar la IP pública de un
+cliente privado a través de NAT.
 * ¿Podrı́as decir si estamos tras un NAT o no?
 	Si, ya que usa el protocolo STUN.
 
-8. La trama 46 es la primera trama SIP. En un entorno como el de Internet, lo habitual es desconocer la dirección IP de la otra parte al
+8. La trama 46 es la primera trama SIP. En un entorno como el de Internet,
+lo habitual es desconocer la dirección IP de la otra parte al
 realizar una llamada. Por eso, todo usuario registra su localización en
 un servidor Registrar. El Registrar guarda información sobre los
 usuarios en un servidor de localización que puede ser utilizado para
@@ -110,7 +120,9 @@ SIP?
 * ¿Podrı́as identificar las diferencias entre el primer intento y el
 segundo de registro? (fı́jate en el tamaño de los paquetes y mira
 a qué se debe el cambio)
-	Vemos que en el primer REGISTER, el frame length es de 523 bytes, y en el segundo, el frame length es de 712 bytes. Este último es mayor, porque añade la autorización para que el registro sea posible.
+	Vemos que en el primer REGISTER, el frame length es de 523 bytes,
+y en el segundo, el frame length es de 712 bytes. Este último es mayor,
+porque añade la autorización para que el registro sea posible.
 * ¿Cuánto es el valor del tiempo de expiración de la sesión? Indica
 las unidades.
 	3600s.
@@ -129,12 +141,15 @@ dirección SIP?
 	No, ya que hay un error 407.
 * ¿En qué se diferencia el segundo INVITE más abajo del primero?
 ¿A qué crees que se debe esto?
-	El tamaño es mayor, porque contiene el campo de identificación del proxy, que el primero no tenía y por eso recibía como respuesta un 407 y no un 200 OK.
-	
+	El tamaño es mayor, porque contiene el campo de identificación del
+proxy, que el primero no tenía y por eso recibía como respuesta un 407
+y no un 200 OK.
 
 11. Una vez conectado, estudia el intercambio de tramas.
 * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
-	RTP y RTCP. El primero, RTP, es el protocolo básico para el transporte de tráfico multimedia a tiempo real en Internet, y RTCP da información de control sobre cómo es la calidad de la transmisión.
+	RTP y RTCP. El primero, RTP, es el protocolo básico para el 
+transporte de tráfico multimedia a tiempo real en Internet, y RTCP da
+información de control sobre cómo es la calidad de la transmisión.
 * ¿Cuál es el tamaño de paquete de los mismos?
 	241 bytes para RTP (paquetes de audio) y 102 bytes para RTCP.
 * ¿Se utilizan bits de padding?
@@ -155,13 +170,16 @@ opción RTP. Empecemos mirando los flujos RTP.
 	Ninguno, ya que el campo Lost tiene 0.0%
 * ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el
 valor de delta?
-	El valor de delta corresponde al tiempo que tarda en llegar un paquete, los valores son 1290.44 y 1290.48.
+	El valor de delta corresponde al tiempo que tarda en llegar
+un paquete, los valores son 1290.44 y 1290.48.
 * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué
 quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
 	Para audio, el jitter max es 119.635 y mean 42.500.
 	Para vídeo, el jitter max es 183.096 y mean 153.240.
-	El jitter es como se mide la transmisión de los paquetes, por los valores que tenemos, se trata de una conexión de calidad, a mayor jitter, peor calidad.
+	El jitter es como se mide la transmisión de los paquetes, por
+los valores que tenemos, se trata de una conexión de calidad, a mayor
+jitter, peor calidad.
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
@@ -169,13 +187,15 @@ calidad?
 ha llegado?
 	Ambos son 0.0
 * ¿Podemos saber si éste es el primer paquete que nos han enviado?
-	Si, ya que los valores de jitter y delta comienzan a partir de ese puno.
+	Si, ya que los valores de jitter y delta comienzan a partir
+de ese punto.
 * Los valores de jitter son menores de 10ms hasta un paquete
 dado. ¿Cuál?
 	Hasta el paquete 246. Tras este, son mayores.
 * ¿A qué se debe el cambio tan brusco del jitter?
 	Se debe a que aumenta el valor de delta.
-* ¿Es comparable el cambio en el valor de jitter con el del delta? ¿Cual es más grande?
+* ¿Es comparable el cambio en el valor de jitter con el del delta?
+¿Cual es más grande?
 	Si, ya que el jitter depende de delta.
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la
@@ -186,7 +206,8 @@ esa llamada y pulsa el botón Graph.
 * ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
 	H.261, que es de vídeo, 0x43306582
 	G.711, que es de audio,	0x3209362743
-	Hay varios porque tenemos dos flujos, uno de audio y otro de vídeo. No hay CSRCs, porque el campo Contributing está a cero.
+	Hay varios porque tenemos dos flujos, uno de audio y otro de vídeo.
+No hay CSRCs, porque el campo Contributing está a cero.
 
 15. Identifica la trama donde se finaliza la conversación.
 * ¿Qué método SIP se utiliza?
@@ -194,19 +215,23 @@ esa llamada y pulsa el botón Graph.
 * ¿En qué trama(s)?
 	En las tramas 924, 925, 927 y 933.
 * ¿Por qué crees que se envı́a varias veces?
-	Porque estamos en UDP, que al ser un protocolo no fiable, es necesario que los mensajes se manden varias veces para asegurarse que ha llegado.
+	Porque estamos en UDP, que al ser un protocolo no fiable, es
+necesario que los mensajes se manden varias veces para asegurarse que
+ha llegado.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
 	Porque para cerrar sesión, se envía el campo Expires 0.
 * ¿En qué trama sucede esto?
 	950
-* ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
-	En lo nombrado anteriormente, el campo Expires pasa a valer 0 en vez de 3600s.
+* ¿En qué se diferencia con la instrucción que se utilizó con anterioridad
+(al principio de la sesión)?
+	En lo nombrado anteriormente, el campo Expires pasa a valer 0
+en vez de 3600s.
 	
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
-Captura de una sesión SIP
+---Captura de una sesión SIP---
 
 17. Dirı́gete a la web http://www.ekiga.net con el navegador y créate
 una cuenta. Lanza Ekiga, y configúralo con los datos de la cuenta
@@ -214,29 +239,37 @@ que te acabas de crear. Comprueba que estás conectado (En la barra
 al final de la ventana podrás ver “Connected”). Al terminar, cierra
 completamente Ekiga.
 
-18. Captura una sesión SIP de una conversación con el número SIP sip:500@ekigan.net.
-Recuerda que has de comenzar a capturar tramas antes de arrancar
-Ekiga para ver todo el proceso3 .
+18. Captura una sesión SIP de una conversación con el número SIP
+sip:500@ekigan.net. Recuerda que has de comenzar a capturar tramas
+antes de arrancar Ekiga para ver todo el proceso.
 
 19. Observa las diferencias en el inicio de la conversación entre el entorno
 del laboratorio y el del ejercicio anterior4 :
 * ¿Se utilizan DNS y STUN? ¿Por qué?
+	
 * ¿Son diferentes el registro y la descripción de la sesión?
-
-20. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
+	
+20. Identifica las diferencias existentes entre esta conversación y
+la conversación anterior:
 * ¿Cuántos flujos tenemos?
+	
 * ¿Cuál es su periodicidad?
+	
 * ¿Cuánto es el valor máximo del delta y los valores medios y
 máximo del jitter?
+	
 * ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
 Comprueba que poniendo un valor demasiado pequeño para el
 buffer de jitter, la conversación puede no tener la calidad necesaria.
+	
 * ¿Sabrı́as decir qué tipo de servicio ofrece sip:500@ekiga.net?
+
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
-
 21. Filtra por los paquetes SIP de la captura y guarda únicamente los
-paquetes SIP como p5.pcapng. Abre el fichero guardado para cerciorarte de que lo has hecho bien. Deberás añadirlo al repositorio.
+paquetes SIP como p5.pcapng. Abre el fichero guardado para cerciorarte de
+que lo has hecho bien. Deberás añadirlo al repositorio.
+	
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 [Al terminar la práctica, realiza un push para sincronizar tu repositorio GitHub]
 
