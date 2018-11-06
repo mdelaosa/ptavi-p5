@@ -122,6 +122,7 @@ sip:500@ekiga.net. Veamos el INVITE de cerca.
 * ¿Puede verse el nombre del que efectúa la llamada, ası́ como su
 dirección SIP?
 	From: 'Gregorio Robles' <sip: grex@ekiga.net>
+	83.36.48.212
 * ¿Qué es lo que contiene el cuerpo de la trama? ¿En qué formato/protocolo está?
 	El cuerpo de la trama contiene el protocolo que se utiliza, SDP.
 * ¿Tiene éxito el primer intento? ¿Cómo lo sabes?
@@ -158,18 +159,24 @@ valor de delta?
 * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué
 quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
-	
+	Para audio, el jitter max es 119.635 y mean 42.500.
+	Para vídeo, el jitter max es 183.096 y mean 153.240.
+	El jitter es como se mide la transmisión de los paquetes, por los valores que tenemos, se trata de una conexión de calidad, a mayor jitter, peor calidad.
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
 * ¿Cuánto valen el delta y el jitter para el primer paquete que
 ha llegado?
+	Ambos son 0.0
 * ¿Podemos saber si éste es el primer paquete que nos han enviado?
+	Si, ya que los valores de jitter y delta comienzan a partir de ese puno.
 * Los valores de jitter son menores de 10ms hasta un paquete
 dado. ¿Cuál?
+	Hasta el paquete 246. Tras este, son mayores.
 * ¿A qué se debe el cambio tan brusco del jitter?
-* ¿Es comparable el cambio en el valor de jitter con el del delta?
-¿Cual es más grande?
+	Se debe a que aumenta el valor de delta.
+* ¿Es comparable el cambio en el valor de jitter con el del delta? ¿Cual es más grande?
+	Si, ya que el jitter depende de delta.
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la
 llamada de voz IP capturada en una ventana emergente. Selecciona
