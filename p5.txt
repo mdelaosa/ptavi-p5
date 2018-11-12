@@ -258,9 +258,13 @@ la conversación anterior:
 * ¿Cuántos flujos tenemos?
 	Un flujo de audio.
 * ¿Cuál es su periodicidad?
-	
+	Entre 90 y 100 paquetes/segundo
 * ¿Cuánto es el valor máximo del delta y los valores medios y
 máximo del jitter?
+	Para 0x5daab5f5 el valor max de jitter es 4.267 y el mean 0.257.
+El valor max de delta es 50.838.
+	Para 0x73c3bee3 el valor max de jitter es 13.631 y el mean 12.479.
+El valor max de delta es 39.044.
 	
 * ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
 Comprueba que poniendo un valor demasiado pequeño para el
