@@ -50,8 +50,8 @@ tiempo real, es mejor UDP.
 * ¿Qué otros protocolos podemos ver en la jerarquı́a de protocolos?
 ¿Cuales crees que son señal y cuales ruido?
 	DNS, TCP, HTTP, SIP, RTP, RTCP, ARP, ICMP, UDP, STUN.
-Son señal: RTP, UDP, SIP.
-Son ruido: ARP, TCP, 
+Son señal los protocolos que nos interesan para la conversación: RTP, UDP, SIP, HTTP, ICP.
+Son ruido los que no son relevantes para la conversación: ARP, TCP, STUN, RTCP, ICMP.
 
 4. Observa por encima el flujo de tramas en el menú de Statistics en IO
 Graphs. La captura que estamos viendo incluye desde la inicialización
@@ -177,9 +177,8 @@ quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
 	Para audio, el jitter max es 119.635 y mean 42.500.
 	Para vídeo, el jitter max es 183.096 y mean 153.240.
-	El jitter es como se mide la transmisión de los paquetes, por
-los valores que tenemos, se trata de una conexión de calidad, a mayor
-jitter, peor calidad.
+	Se trata de una conversación de poca calidad, ya que la gráfica de la
+captura no es recta, sino que tiene picos en los que se envían más o menos paquetes.
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
@@ -246,14 +245,18 @@ antes de arrancar Ekiga para ver todo el proceso.
 19. Observa las diferencias en el inicio de la conversación entre el entorno
 del laboratorio y el del ejercicio anterior4:
 * ¿Se utilizan DNS y STUN? ¿Por qué?
-	No se usan ninguno de los dos. En el caso de DNS aparece en la captura, pero para otras funciones que no nos afectan a la hora de la conversación de Ekiga, mientras que STUN ni siquiera aparece. Esto se debe a que no se trata de una conersación cliente-servidor, sino de entre iguales, además se trata de IPs privadas, no públicas.
+	No se usan ninguno de los dos. En el caso de DNS aparece en la captura,
+pero para otras funciones que no nos afectan a la hora de la conversación de Ekiga,
+mientras que STUN ni siquiera aparece. Esto se debe a que no se trata de una
+conversación cliente-servidor, sino de entre iguales, además se trata de IPs
+privadas, no públicas.
 * ¿Son diferentes el registro y la descripción de la sesión?
 	Si son diferentes.
 
 20. Identifica las diferencias existentes entre esta conversación y
 la conversación anterior:
 * ¿Cuántos flujos tenemos?
-	
+	Un flujo de audio.
 * ¿Cuál es su periodicidad?
 	
 * ¿Cuánto es el valor máximo del delta y los valores medios y
@@ -262,9 +265,12 @@ máximo del jitter?
 * ¿Podrı́as reproducir la conversación desde Wireshark? ¿Cómo?
 Comprueba que poniendo un valor demasiado pequeño para el
 buffer de jitter, la conversación puede no tener la calidad necesaria.
-	
+	Gracias al apartado de 'Telephony' -> 'VoIP Calls podemos ver la llamada
+capturada, la duración de esta y los paquetes capturados, además, si usamos
+'Play Streams' deberíamos poder escucharla, sin embargo, en este caso, Wireshark
+no nos lo permite por problemas con la aplicación.
 * ¿Sabrı́as decir qué tipo de servicio ofrece sip:500@ekiga.net?
-	
+	Servicio de eco
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 21. Filtra por los paquetes SIP de la captura y guarda únicamente los
