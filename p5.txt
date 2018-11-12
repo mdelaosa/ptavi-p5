@@ -258,7 +258,7 @@ la conversación anterior:
 * ¿Cuántos flujos tenemos?
 	Un flujo de audio.
 * ¿Cuál es su periodicidad?
-	Entre 90 y 100 paquetes/segundo
+	50 paquetes/segundo que son aproximadamente 128Kbps.
 * ¿Cuánto es el valor máximo del delta y los valores medios y
 máximo del jitter?
 	Para 0x5daab5f5 el valor max de jitter es 4.267 y el mean 0.257.
