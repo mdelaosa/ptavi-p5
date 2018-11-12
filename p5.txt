@@ -244,7 +244,7 @@ sip:500@ekigan.net. Recuerda que has de comenzar a capturar tramas
 antes de arrancar Ekiga para ver todo el proceso.
 
 19. Observa las diferencias en el inicio de la conversación entre el entorno
-del laboratorio y el del ejercicio anterior4 :
+del laboratorio y el del ejercicio anterior4:
 * ¿Se utilizan DNS y STUN? ¿Por qué?
 	
 * ¿Son diferentes el registro y la descripción de la sesión?
